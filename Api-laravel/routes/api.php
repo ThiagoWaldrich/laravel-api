@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('Hello/{name}',function($name){
     return 'hello world ' . $name;
 });
-Route::post('/Hello-Post','App\Http\Controllers\HelloWorldController@hello');
+Route::post('/Hello-Post/{name}','App\Http\Controllers\HelloWorldController@hello');
 
 
 

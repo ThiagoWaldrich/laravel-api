@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class HelloWorldController extends Controller{
 
-    public function hello(){
-        return 'Hello Controller';
+    public function hello($name){
+        return 'Hello Controller ' . $name;
     }
 
 }
