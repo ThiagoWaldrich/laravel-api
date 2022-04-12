@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('Hello',function(){
-    return 'hello world';
+Route::get('Hello/{name}',function($name){
+    return 'hello world ' . $name;
 });
 Route::post('Hello-Post',function(){
     return 'hello post';
