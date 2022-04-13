@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class HelloWorldController extends Controller{
 
     public function hello($name){
-        return response()->json(data:"Hello World {$name}");
+        return response()->json([
+            "Oi"=>"Hello World {$name}",
+            "Tchau"=>"Bye bye {$name}"]);
     }
-
 }
