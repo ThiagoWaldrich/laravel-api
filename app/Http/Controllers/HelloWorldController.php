@@ -11,7 +11,7 @@ class HelloWorldController extends Controller{
         return response()->json([
             "Oi"=>"Hello World {$name}",
             "Tchau"=>"Bye bye {$name}",
-            "Salve"=>$request->foo
+            "Salve"=>$request->all()
         ]);
     }
 }
