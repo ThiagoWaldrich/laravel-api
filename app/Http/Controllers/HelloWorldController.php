@@ -15,3 +15,6 @@ class HelloWorldController extends Controller{
         ]);
     }
 }
+//Dessa forma são adicionados mais índices no array
+//http://127.0.0.1:8000/api/hello-post/dio?foo=bar
+//http://127.0.0.1:8000/api/Hello-Post/ThiagoWaldrich?foo=bar&foo1=bar1
