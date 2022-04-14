@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class BandController extends Controller
 {
@@ -24,6 +25,23 @@ class BandController extends Controller
         : abort(code:404);
         //Se o id da banda for igual ao id chamado, retorne
         //na variável band
+    }
+    public function getBandsByGender($gender){
+        $bands = [];
+
+        foreach($this->getBands() as $_band){
+            if($_band['gender']==$gender)
+            $bands[] = $_band;
+        }
+    }
+    public function store(Request $request){
+        
+        $validate = $request->validate([
+            'id'=>'numeric',
+            'name'=>'required|min:3'
+        ]);
+        return response()->json($request->all());
+
     }
 
     protected function getBands()
