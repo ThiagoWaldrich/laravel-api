@@ -27,3 +27,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/bands','App\Http\Controllers\BandController@getAll');
+Route::get('/bands/{id}','App\Http\Controllers\BandController@getById');

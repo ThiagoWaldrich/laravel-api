@@ -13,6 +13,18 @@ class BandController extends Controller
 
         return response()->json($bands);
     }
+    public function getById($id){
+        $band = null;
+
+        foreach($this->getBands() as $_band){
+            if($_band['id']==$id)
+            $band = $_band;
+        }
+        return $band ? response()->json($band)
+        : abort(code:404);
+        //Se o id da banda for igual ao id chamado, retorne
+        //na variável band
+    }
 
     protected function getBands()
     {
@@ -35,3 +47,4 @@ class BandController extends Controller
         ];
     }
 }
+//php artisan make:controller nomedocontroller
